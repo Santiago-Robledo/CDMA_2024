@@ -15,10 +15,21 @@ module tt_um_CDMA_Santiago (
     input  wire       clk,      // clock
     input  wire       rst_n     // reset_n - low to reset
 );
-
+  //Instantiate cdma module
+    cdma cdma_U1(  
+        .clk_i(),
+        .rst_i(),
+        .signal_i(),
+        .seed_i(), 
+        .receptor_i(),
+        .load_i(),
+        .cdma_o(),
+        .gold_o(),
+        .receptor_o(),
+        .led_o()
+    );
   // All output pins must be assigned. If not used, assign to 0.
-  assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
-  assign uio_out = 0;
-  assign uio_oe  = 0;
+    
+  
 
 endmodule
