@@ -23,7 +23,7 @@ module tb ();
   wire [7:0] uio_oe;
 
   // Replace tt_um_example with your module name:
-  tt_um_example user_project (
+  tt_um_CDMA_Santiago user_project (
 
       // Include power ports for the Gate Level test:
 `ifdef GL_TEST
@@ -40,5 +40,27 @@ module tb ();
       .clk    (clk),      // clock
       .rst_n  (rst_n)     // not reset
   );
+
+   //Create the clock signal
+    always begin #0.5 clk = ~clk; end
+
+    always begin #32 ui_in[0]= ~ui_in[0]; end //Espera 1 ciclo de la carga de la semilla
+
+    always begin #0.001 ui_in[6] = uio_out[0]; end
+
+    //Create stimulus
+    initial begin
+		#1; rst_n = 1; //Initializes the FlipFlops with 0.
+		#1.3; rst_n=0;   //stop the reset
+      #1; ui_in[5:1]=4'b1101; //Set the seed into the LFSR
+		#1; ui_in[7]= 1;
+      #1.3; //Realease the load
+      ui_in[7] = 0;
+    end
+    //This will stop the simulator when the time expires
+    initial begin
+        #63 $stop;
+    end
+endmodule
 
 endmodule
