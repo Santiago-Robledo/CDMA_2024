@@ -17,19 +17,19 @@ module tt_um_CDMA_Santiago (
 );
   //Instantiate cdma module
     cdma cdma_U1(  
-        .clk_i(),
-        .rst_i(),
-        .signal_i(),
-        .seed_i(), 
-        .receptor_i(),
-        .load_i(),
-        .cdma_o(),
-        .gold_o(),
-        .receptor_o(),
-        .led_o()
+        .clk_i(clk),
+        .rst_i(~rst_n),
+        .signal_i(ui_in[0]),
+        .seed_i(ui_in[5:1]), 
+        .receptor_i(ui_in[6]),
+        .load_i(ui_in[7]),
+        .cdma_o(uio_out[0]),
+        .gold_o(uio_out[1]),
+        .receptor_o(uio_out[2]),
+        .led_o(uio_out[3])
     );
   // All output pins must be assigned. If not used, assign to 0.
-    
-  
-
+    assign uio_oe = 8'b11111111;
+    assign uo_out[7:0] = 8'b00000000;
+    assign uio_out[7:4] = 4'b0000;
 endmodule
