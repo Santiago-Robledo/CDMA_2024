@@ -62,5 +62,3 @@ module tb ();
         #63 $stop;
     end
 endmodule
-
-endmodule
