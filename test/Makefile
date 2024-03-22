@@ -6,7 +6,8 @@ SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
 PROJECT_SOURCES = tt_um_CDMA_Santiago.v
-
+VERILOG_SOURCES += $(PWD)/cdma.v
+VERILOG_SOURCES += $(PWD)/tt_um_CDMA_Santiago.v
 ifneq ($(GATES),yes)
 
 # RTL simulation:
