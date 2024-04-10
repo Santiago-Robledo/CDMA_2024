@@ -20,11 +20,10 @@ The diagram is conformed in a single verilog file, it contains the following.
       * Gold_o is the output to observe the generated Gold code sequence.
       * receptor_o is the output of the decoded recieved signal from receptor_i
 ## Diagram 
- ![Alt text]![image](https://github.com/Santiago-Robledo/CDMA_2024/assets/143015883/aa351b16-4bac-414e-a911-e8ede3631944)
+ ![image](https://github.com/Santiago-Robledo/CDMA_2024/assets/143015883/aa351b16-4bac-414e-a911-e8ede3631944)
 
-
-
-
+## Tinytapeout Diagram
+ ![image](https://github.com/Santiago-Robledo/tt06-CDMA-2024/assets/143015883/67b8c822-19cb-4bd5-a8fe-8466f0c4ab24)
 
 # Objectives
  * Study the spread-spectrum signal traveling throughout a simulated channel composed of analogic devices such as an OPAM in order to add noise to the transmited signal CDMA.
